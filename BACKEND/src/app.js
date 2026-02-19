@@ -24,7 +24,7 @@ const __dirname = path.dirname(__filename);
 const frontendPath = path.join(__dirname, "../../FRONTEND");
 app.use("/FRONTEND", express.static(frontendPath));
 
-app.get("(.*)", (req, res) => {
+app.get("/:path*", (req, res) => {
     res.sendFile(path.join(__dirname, "../../index.html"));
 });
 
