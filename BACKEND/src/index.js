@@ -24,24 +24,25 @@
 
 
 
-
-
 import dotenv from "dotenv";
 import connectDB from "./Configs/database.js";
 import express from "express";
 import path from "path";
-import app from "./app.js"; 
+import { fileURLToPath } from "url";
+import app from "./app.js";
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 dotenv.config({
-    path: '../.env' 
+    path: '../.env'
 });
+
 const server = express();
 server.use("/", app);
 server.use("/FRONTEND", express.static(path.join(__dirname, "../../FRONTEND")));
-server.get("/", (req, res) => {
+server.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "../../index.html"));
 });
-
 const startServer = async () => {
     try {
         await connectDB();
@@ -60,4 +61,3 @@ const startServer = async () => {
 };
 
 startServer();
-
