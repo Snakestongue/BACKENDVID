@@ -1,134 +1,168 @@
 
 let boo =true;
-function colorSwitch(){
-    let header = document.getElementsByTagName("header")[0];
-    let main = document.getElementsByTagName("main")[0];
-    let footer = document.getElementsByTagName("footer")[0];
-    let div = document.getElementsByTagName("div");
-//    let headTitle = document.getElementById("headTitle");
+let navs = document.getElementsByClassName("navs");
 
-    if (boo){
-        header.setAttribute("style", "background-color:white;")
-        main.setAttribute("style", "background-color:black; color:white")
-        footer.setAttribute("style", "background-color:white; color:black")
-        for(let i=0; i<div.length; i++){
-            div[i].setAttribute("style", "border-color:white");
+for (let i= 0; i < navs.length; i++) {
+    navs[i].addEventListener("mouseover", function() {
+        this.style.color = "black";
+        if (boo){
+            this.style.backgroundColor = "#FFD700";
+        } else {
+            this.style.backgroundColor = "#00ff2f";
         }
-     //   headTitle.setAttribute("style", "color:black")
-        
-    }else{
-        header.setAttribute("style", "background-color:black;")
-        main.setAttribute("style", "background-color:white; color:black")
-        footer.setAttribute("style", "background-color:black; color:white")
-        for(let i=0; i<div.length; i++){
-            div[i].setAttribute("style", "border-color:black");
+    });
+    navs[i].addEventListener("mouseout", function() {
+        this.style.backgroundColor = "rgb(15,15,15)";
+        if (boo) {
+            this.style.color = "#FFD700";
+        } else {
+            this.style.color = "#00ff2f";
         }
-      //  headTitle.setAttribute("style", "color:white")
-    }
-    boo =!boo
+    });
 }
 
-// function keyboard(alpha){
-//             var alpha = ['1', '2', '3', '4', '5', '6', '7', '8',
-//         '9', '0', 'q','w','e','r','t','y','u','i','o','p','a','s',
-//             'd','f','g','h','j','k','l',';','\'',
-//             'z','x','c','v','b','n','m', ',','.', ' '];
-        
-        
-//         var capitals = ['!', '@', '#', '$', '%', '^', '&', '*',
-//         '(', ')', 'Q','W','E','R','T','Y','U','I','O','P','A','S',
-//             'D','F','G','H','J','K','L',':','"',
-//             'Z','X','C','V','B','N','M', '<','>', ' '];
-//         function makeKeyboard(alpha){
-//             let keyboard = document.getElementById("keyboard");
-//             let textbox = document.getElementById("textbox");
-            
-//             //shift
-//             let shiftOn = false;
-//             let shift = document.createElement("button");
-//              shift.style.backgroundColor = "black";
-//                 shift.style.color = "white";
-//                 shift.style.width = "90px"
-//             shift.innerHTML = "shift"
-//             shift.addEventListener("click", function(){
-//                 shiftOn = true;
-//             })
-            
-//             //a-z + space 
-//             for (let i =0; i<alpha.length; i++){
-//                 let create = document.createElement("button");
-//                 create.style.backgroundColor = "black";
-//                 create.style.color = "white";
-//                 create.style.width = "30px"
-//                 create.innerHTML = alpha[i];
 
-//                 if (alpha[i] == "z" || alpha[i]=="q" || alpha[i]=="a" || alpha[i] == ' '){
-//                     let br = document.createElement("br");
-//                     keyboard.appendChild(br);
-//                 }
-                
-//                 if (alpha[i] == ' '){
-//                         create.innerHTML = ("space");
-//                         create.style.width = "90px"
-//                      }
-//                 create.addEventListener("click", function(){
-//                     if (shiftOn == true){
-//                         textbox.innerHTML +=capitals[i];
-//                         shiftOn =false;
-//                     }else{
-//                     textbox.innerHTML += alpha[i];
-//                     }
-//                 });
-//                 keyboard.appendChild(create);
-//             }
-//             //reset
-//             let resetB = document.createElement("button");
-//              resetB.style.backgroundColor = "black";
-//             resetB.style.color = "white";
-//             resetB.style.width = "90px"
-//             resetB.innerHTML = ("reset");
-//             resetB.addEventListener("click", function(){
-//                 textbox.innerHTML = " "
-//             })
+function colorSwitchMAIN(){
+let navs = document.getElementsByClassName("navs");
+
+    let hT = document.getElementById("headTitle")
+    let tongue = document.getElementById("tongue")
+    let GS = document.getElementById("GS")
+    let mainIndex = document.getElementById("mainIndex")
+    let sideIndex = document.getElementById("sideIndex")
+   
+    boo= !boo
+    if (!boo){
+        for(let i=0; i<navs.length; i++){
+            navs[i].style.color = "#00ff2f";    
+        }
+        hT.style.color = "#00ff2f"
+        GS.style.backgroundColor = "#00ff2f"
+        mainIndex.style.boxShadow = "0 0 30px #00ff2f";
+        sideIndex.style.boxShadow = "0 0 30px #00ff2f";
+        mainIndex.style.border = "3px solid #00ff2f";
+        sideIndex.style.border = "3px solid #00ff2f";
+        tongue.style.color = "white";
+
+        
+    }else{
+       for(let i=0; i<navs.length; i++){
+            navs[i].style.color = "#FFD700";
+             
+        }
+        hT.style.color = "#FFD700"
+        GS.style.backgroundColor = "#FFD700"
+        mainIndex.style.boxShadow = "0 0 30px #FFD700";
+        sideIndex.style.boxShadow = "0 0 30px #FFD700";
+        mainIndex.style.border = "3px solid #FFD700";
+        sideIndex.style.border = "3px solid #FFD700";
+        tongue.style.color = "white";
+    }
+}
+function colorSwitchLogin(){
+     let logins = document.getElementById("loginCard");
+    let oLogin = document.getElementById("oLogin");  
+        let hT = document.getElementById("headTitle")
+    let tongue = document.getElementById("tongue")
+let navs = document.getElementsByClassName("navs");
+    boo= !boo
+    if (!boo){
+        for(let i=0; i<navs.length; i++){
+            navs[i].style.color = "#00ff2f";
             
-//             //backSpace
-//             let backSpace = document.createElement("button");
-//              backSpace.style.backgroundColor = "black";
-//             backSpace.style.color = "white";
-//             backSpace.style.width = "90px"
-//             backSpace.innerHTML = "backspace"
-//             backSpace.addEventListener("click", function(){
-//                 textbox.innerHTML = textbox.innerHTML.slice(0, -1);
-//                 /*Slice is a method used for strings and/or arrays 
-//                 it's general syntex is slice(starting index, ending index);
-//                 -1 is used to cut back the last character, if -2 was used
-//                 then the second last character would be cut
-//                 By using 0, the first character is kept.*/
-//             })
+        }
+        hT.style.color = "#00ff2f"
+         tongue.style.color = "white";
+
+
+        logins.style.border = "3px solid #00ff2f"
+        logins.style.boxShadow = "0 0 120px #00ff2f"
+        oLogin.style.border = "3px solid #00ff2f"
+        
+    }else{
+       for(let i=0; i<navs.length; i++){
+            navs[i].style.color = "#FFD700";
+             
+        }
+         hT.style.color = "#FFD700"
+        tongue.style.color = "white";
+        
+        logins.style.border = "3px solid #FFD700"
+        logins.style.boxShadow = "0 0 120px #FFD700"
+        oLogin.style.border = "3px solid #FFD700"
+    }
+}
+
+
+function colorSwitchNOTES(){
+     let textbox = document.getElementById("textbox");
+    let view = document.getElementById("view");  
+        let hT = document.getElementById("headTitle")
+    let tongue = document.getElementById("tongue")
+let navs = document.getElementsByClassName("navs");
+    boo= !boo
+    if (!boo){
+        for(let i=0; i<navs.length; i++){
+            navs[i].style.color = "#00ff2f";
             
-//             //enter
-//             let enterB = document.createElement("button");
-//              enterB.style.backgroundColor = "black";
-//             enterB.style.color = "white";
-//             enterB.style.width = "90px"
-//             enterB.innerHTML = "enter";
-//             enterB.addEventListener("click", function(){
-//                 let enterBreak = document.createElement("br")
-//                 textbox.appendChild(enterBreak);
-//             })
+        }
+        hT.style.color = "#00ff2f"
+         tongue.style.color = "white";
+
+
+        textbox.style.border = "3px solid #00ff2f"
+        textbox.style.boxShadow = "0 0 120px #00ff2f"
+         view.style.border = "3px solid #00ff2f"
+        view.style.boxShadow = "0 0 120px #00ff2f"
+        
+    }else{
+       for(let i=0; i<navs.length; i++){
+            navs[i].style.color = "#FFD700";
+             
+        }
+         hT.style.color = "#FFD700"
+        tongue.style.color = "white";
+        
+        textbox.style.border = "3px solid #FFD700"
+        textbox.style.boxShadow = "0 0 120px #FFD700"
+         view.style.border = "3px solid #FFD700"
+        view.style.boxShadow = "0 0 120px #FFD700"
+    }
+}
+
+
+function colorSwitchQA(){
+     let card = document.getElementById("QANDACARD");
+        let hT = document.getElementById("headTitle")
+    let tongue = document.getElementById("tongue")
+let navs = document.getElementsByClassName("navs");
+    boo= !boo
+    if (!boo){
+        for(let i=0; i<navs.length; i++){
+            navs[i].style.color = "#00ff2f";
             
-//             //shift
-            
-//             keyboard.appendChild(shift);
-           
-//             //appending
-//             keyboard.appendChild(enterB);
-//             keyboard.appendChild(backSpace);
-//             keyboard.appendChild(resetB);
-//         }
-    
-//         makeKeyboard(alpha);
-// }
+        }
+        hT.style.color = "#00ff2f"
+         tongue.style.color = "white";
+
+
+        card.style.border = "3px solid #00ff2f"
+        card.style.boxShadow = "0 0 120px #00ff2f"
+     
+        
+    }else{
+       for(let i=0; i<navs.length; i++){
+            navs[i].style.color = "#FFD700";
+             
+        }
+         hT.style.color = "#FFD700"
+        tongue.style.color = "white";
+        
+        card.style.border = "3px solid #FFD700"
+        card.style.boxShadow = "0 0 120px #FFD700"
+        
+    }
+}
 
 function newKeyboard(){
     let textbox = document.getElementById("textbox");

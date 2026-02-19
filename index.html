@@ -1,63 +1,78 @@
 <html>
     <head>
-        <link rel="stylesheet" href="/FRONTEND/style.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <div id="parent">
             <header>
-                <a href="index.html" id="headTitle">Notes Saver</a>
+                <a href="index.html" id="headTitle">Notes Saver by <span id="tongue">Snakestongue</span></a>
             </header>
             <nav>
                 <ul id="navList">
-                    <li><button id="login">Login</button></li>
-                    <li><button id="colorSwitch">ColorSwitch</button></li>
+                    <li><button class="login navs">Login</button></li>
+                    <li><button id="colorSwitch" class="navs">ColorSwitch</button></li>
+                    <li><button id="qa" class="navs">Q and A</button></li>
                 </ul>
             </nav>
             <main>
-                <div id = "mainIndex">
-                    <p>Welcome to Notes Saver! Any questions don't be afraid to message me! Click Login to start!</p>
-                    <p>Here are some common questions one may face.</p>
-                    <ul>
-                        <li>Where can I get my notes from?</li>
-                        <ul>
-                            <li>Click Login and then login with your information and start typing away!</li>
-                        </ul>
-                        <li>How can I add notes?</li>
-                        <ul>
-                            <li>Click on the left box and start typing!</li>
-                        </ul>
-                        <li>How can I delete my saved notes?</li>
-                        <ul>
-                            <li>Unfortunatly currently all saved notes are permant. We suggest contacting
-                                owner to delete all notes or creating a new account.
-                            </li>
-                        </ul>
-                        <li>Why does it keep saying Internal Server Error when I have text placed in textbox?</li>
-                        <ul>
-                            <li>We have a minimum character limit of 15 characters.
-                            </li>
-                        </ul>
-                        <li>What does the reset button do?</li>
-                        <ul>
-                            <li>The reset button just clears all unsaved text in the textbox.
-                            </li>
-                        </ul>
-                    </ul>
+                <div id = "indexOver">
+                    <div id = "sideIndex">
+                        <h2>Why use Notes Saver?</h2>
+                        <div class="whyNS">
+                            
+                            <div class="reasons">
+                            <svg class="svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+                            </svg>
+
+                            <h3>Secure Notes</h3>
+                            <p>Your notes are safely stored and private.</p>
+                            </div>
+
+                    
+                            <div class="reasons">
+                            <svg class="svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m6.115 5.19.319 1.913A6 6 0 0 0 8.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 0 0 2.288-4.042 1.087 1.087 0 0 0-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 0 1-.98-.314l-.295-.295a1.125 1.125 0 0 1 0-1.591l.13-.132a1.125 1.125 0 0 1 1.3-.21l.603.302a.809.809 0 0 0 1.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 0 0 1.528-1.732l.146-.292M6.115 5.19A9 9 0 1 0 17.18 4.64M6.115 5.19A8.965 8.965 0 0 1 12 3c1.929 0 3.716.607 5.18 1.64" />
+                            </svg>
+
+                            <h3>Access Anywhere</h3>
+                            <p>Open your notes from any device, anytime.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id = "mainIndex">
+                        <h1 id="sideHead">Welcome to Notes Saver!</h1>
+                    <p id="sideContent">Organize your thoughts, save important notes, and access them anytime.</p>
+                    <button class="login" id="GS">Get Started</button>
+                    </div>
                 </div>
+
             </main>
             <footer>
-                <p>Any suggestions? Contact Owne!r</p>
+                <p>Any suggestions? Contact Owner!</p>
             </footer>
         </div>
         <script src="script.js"></script>
         <script>
             let colorSwitchButton = document.getElementById("colorSwitch");
-            colorSwitchButton.addEventListener("click", colorSwitch);
-            let login = document.getElementById("login");
-            login.addEventListener("click", function() {
+            colorSwitchButton.addEventListener("click", colorSwitchMAIN);
+            let login1 = document.getElementsByClassName("login")[0];
+            let login2 = document.getElementsByClassName("login")[1];
+
+            let q = document.getElementById("qa")
+            login1.addEventListener("click", function() {
                 // Navigate to another page
                 window.location.href = "login.html";
             });
+            login2.addEventListener("click", function() {
+                // Navigate to another page
+                window.location.href = "login.html";
+            });
+            q.addEventListener("click", function() {
+                // Navigate to another page
+                window.location.href = "qAndA.html";
+            });
+        </script>
         </script>
     </body>
 </html>

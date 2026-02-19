@@ -22,8 +22,9 @@ const __dirname = path.dirname(__filename);
 const frontendPath = path.join(__dirname, "../../FRONTEND");
 app.use(express.static(frontendPath));
 
-app.get('*path', (req, res) => {
-  res.sendFile(path.join(frontendPath, "index.html"));
+app.get('*splat', (req, res) => {
+  //res.sendFile(path.join(__dirname, "../index.html"));
+  res.sendFile(path.join(__dirname, "../../index.html"));
 });
 
 export default app;

@@ -5,12 +5,13 @@
     <body>
         <div id="parent">
            <header>
-                <a href="index.html" id="headTitle">Notes Saver</a>
+                <a href="../index.html" id="headTitle">Notes Saver by <span id="tongue">Snakestongue</span></a>
             </header>
-            <nav>
+             <nav>
                 <ul id="navList">
-                    <li><button id="login">Login</button></li>
-                    <li><button id="colorSwitch">ColorSwitch</button></li>
+                    <li><button class="navs" id="login">Login</button></li>
+                    <li><button id="colorSwitch" class="navs">ColorSwitch</button></li>
+                    <li><button id="qa" class="navs">Q and A</button></li>
                 </ul>
             </nav>
             <main>
@@ -25,7 +26,7 @@
                 </div>
             </main>
             <footer>
-                <p>Any suggestions? Contact Owne!r</p>
+                <p>Not working? Check the <a id="footerLink" href="../index.html">main page</a> for help!</p>
             </footer>
         </div>
         <script src="script.js"></script>
@@ -105,11 +106,12 @@
                          
                         view.innerHTML = ""; 
                         data.notes.forEach(note => {
-                            
+                        
                             view.innerHTML += `<p>${note.content}</p>`; 
-                            alert("Notes uploaded")
+                            
                            
                         });
+                         alert("Notes uploaded")
                     } else {
                         alert("Failed to retrieve notes: " + data.message);
                     }
@@ -121,11 +123,14 @@
 
 
              let colorSwitchButton = document.getElementById("colorSwitch");
-            colorSwitchButton.addEventListener("click", colorSwitch);
+            colorSwitchButton.addEventListener("click", colorSwitchNOTES);
             let login = document.getElementById("login");
+            let q = document.getElementById("qa")
             login.addEventListener("click", function() {
-                // Navigate to another page
                 window.location.href = "login.html";
+            });
+            q.addEventListener("click", function() {
+                window.location.href = "qAndA.html";
             });
         </script>
     </body>
