@@ -27,7 +27,7 @@
 
 
 import dotenv from "dotenv";
-import connectDB from "../Configs/database.js";
+import connectDB from "./Configs/database.js";
 import express from "express";
 import path from "path";
 import app from "../app.js"; 
