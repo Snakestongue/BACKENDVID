@@ -17,13 +17,18 @@ import { fileURLToPath } from "url";
 import userRouter from "./Routes/user.route.js";
 
 const app = express();
+
+
 app.use(express.json());
 app.use("/api/v1/users", userRouter);
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const frontendPath = path.join(__dirname, "../../FRONTEND");
-app.use("/FRONTEND", express.static(frontendPath));
+app.use(express.static(path.join(__dirname, "../../")));
 
+
+app.use("/FRONTEND", express.static(frontendPath));
 app.get('{/*path}', (req, res) => {
     res.sendFile(path.join(__dirname, "../../index.html"));
 });
