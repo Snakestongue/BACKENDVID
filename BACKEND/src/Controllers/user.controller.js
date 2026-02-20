@@ -11,16 +11,20 @@ const register =  async(req, res) => {
         
         if (existing){
             const isPasswordMatch = existing.password == password;
+            const isEmailMatch = existing.email.toLowerCase() == email.toLowerCase();
           const isUsernameMatch = existing.username.toLowerCase() == username.toLowerCase();
             //return res.status(400).json({message: "User already registered"})
-            if (isPasswordMatch && isUsernameMatch){
-            return  res.status(200).json({
-             message: "Logging back in!",
-            user: {id: existing._id, email: existing.email, user: existing.username}
+            if (isPasswordMatch && isUsernameMatch && isEmailMatch){
+            return  res.status(400).json({
+             message: "You already signed up! Go to login page!",
             })
+            }else if (isUsernameMatch && isEmailMatch){
+                return  res.status(400).json({
+             message: "Incorrect Password!"
+            }) 
             }else{
                 return  res.status(400).json({
-             message: "Incorrect Password or Username!"
+             message: "Incorrect Username or Email!"
             }) 
             }
           

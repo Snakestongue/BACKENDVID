@@ -15,8 +15,10 @@
              <nav>
                 <ul id="navList">
                     <li><button class="navs" id="login">Login</button></li>
+                    <li><button id="SUP" class="navs">Sign Up</button></li>
                     <li><button id="colorSwitch" class="navs">ColorSwitch</button></li>
                     <li><button id="qa" class="navs">Q and A</button></li>
+                    
                 </ul>
             </nav>
             <main>
@@ -35,7 +37,9 @@
 
                 
             <footer>
-                <p>Not working? Check the <a id="footerLink" href="../index.html">main page</a> for help!</p>
+                <a id="footerLink" href="https://github.com/Snakestongue">Github</a>  
+             <p>&copy; 2026 Notes Saver by Snakestongue. All rights reserved.</p>
+
             </footer>
         </div>
         <script src="script.js"></script>
@@ -85,10 +89,8 @@
 
 
             saveButton.addEventListener("click", async function(){
-                let content = document.getElementById("textbox").innerHTML;
-                
+                let content = document.getElementById("textbox").innerHTML;    
                 let emailValue = emailInput.value; 
-
                 if (!content || !emailValue) {
                     alert("Please fill out the textbox!");
                     return;
@@ -145,6 +147,7 @@
 
              let colorSwitchButton = document.getElementById("colorSwitch");
             colorSwitchButton.addEventListener("click", colorSwitchNOTES);
+            let sup = document.getElementById("SUP")
             let login = document.getElementById("login");
             let q = document.getElementById("qa")
             login.addEventListener("click", function() {
@@ -152,6 +155,9 @@
             });
             q.addEventListener("click", function() {
                 window.location.href = "qAndA.html";
+            });
+            sup.addEventListener("click", function() {
+                window.location.href = "signup.html";
             });
              newKeyboard();
         </script>

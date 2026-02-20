@@ -23,12 +23,14 @@
                 </ul>
             </nav>
             <main>
-                <div id = "loginCard">
-                    <h1>Enter Login Info</h1>
+                <div id = "signUpCard">
+                    <h1>Sign up!</h1>
                     <input type="text" id="userName" placeholder="Username" class="logins">
-                    <input type="password" id="passWord" placeholder="Password" class="logins">
+                    <input type="text" id="passWord" placeholder="Password" class="logins">
+                    <input type="text" id="eMail" placeholder="email" class="logins">
                     <button id="oLogin">Login</button>
                     <p class="warning">All passwords must be 6+ characters</p>
+                    <p class="warning">All emails must be valid emails.</p>
                 </div>
             </main>
            <footer>
@@ -46,24 +48,30 @@
     let oLogBut = document.getElementById("oLogin");
 
     oLogBut.addEventListener("click", async function() {
-        let username = document.getElementById("userName").value.trim();
-        let password = document.getElementById("passWord").value.trim();
-        if (!username || !password) {
+        let username = document.getElementById("userName").value;
+        let password = document.getElementById("passWord").value;
+        let email = document.getElementById("eMail").value;
+        if (!username || !password || !email) {
             alert("Please fill out all fields!");
             return;
         }
+
         try {
-            const response = await fetch("/api/v1/users/login", { 
+            const response = await fetch("/api/v1/users/register", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
+                headers: {
+                    "Content-Type": "application/json"
+                },
                 body: JSON.stringify({
                     username: username,
+                    email: email,
                     password: password
                 })
             });
             const wait = await response.json();
             if (response.ok) {
-             //   localStorage.setItem("userName", wait.user.user);
+                localStorage.setItem("userEmail", email);
+                localStorage.setItem("userName", wait.user.user);
                 alert(wait.message);
                 window.location.href = "notes.html";
             } else {
@@ -71,12 +79,12 @@
             }
         } catch (error) {
 
-            alert("Internal Server Error");
+            alert(wait.message);
          }
     });
 
 
-    colorSwitchButton.addEventListener("click", colorSwitchLogin);
+    colorSwitchButton.addEventListener("click", colorSwitchSignUp);
     let login = document.getElementById("login");
     let q = document.getElementById("qa")
     let sup = document.getElementById("SUP")
@@ -88,9 +96,9 @@
         window.location.href = "qAndA.html";
     });
     sup.addEventListener("click", function() {
+       
         window.location.href = "signup.html";
     });
 </script>
     </body>
-    <!-- npm --prefix BACKEND run dev -->
 </html>

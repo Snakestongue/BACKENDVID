@@ -12,12 +12,13 @@
             <header>
                 <a href="../index.html" id="headTitle">Notes Saver by <span id="tongue">Snakestongue</span></a>
             </header>
-            <nav>
-                <!--Nav Universal-->
+           <nav>
                 <ul id="navList">
                     <li><button class="navs" id="login">Login</button></li>
-                   <li><button id="colorSwitch" class="navs">ColorSwitch</button></li>
+                    <li><button id="SUP" class="navs">Sign Up</button></li>
+                    <li><button id="colorSwitch" class="navs">ColorSwitch</button></li>
                     <li><button id="qa" class="navs">Q and A</button></li>
+                    
                 </ul>
             </nav>
             <main>
@@ -58,7 +59,9 @@
                 </div>
             </main>
             <footer>
-                <p>Any suggestions? Contact Owner!</p>
+                <a id="footerLink" href="https://github.com/Snakestongue">Github</a>  
+             <p>&copy; 2026 Notes Saver by Snakestongue. All rights reserved.</p>
+
             </footer>
         </div>
         <script src="script.js"></script>
@@ -67,13 +70,16 @@
             colorSwitchButton.addEventListener("click", colorSwitchQA);
             let login = document.getElementById("login");
             let q = document.getElementById("qa")
+            let sup = document.getElementById("SUP")
             login.addEventListener("click", function() {
-                // Navigate to another page
                 window.location.href = "login.html";
             });
             q.addEventListener("click", function() {
-                // Navigate to another page
                 window.location.href = "qAndA.html";
+            });
+            sup.addEventListener("click", function() {
+       
+                window.location.href = "signup.html";
             });
         </script>
     </body>

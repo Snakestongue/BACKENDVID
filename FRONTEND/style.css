@@ -83,6 +83,7 @@ header a:hover, header a:active {
 }
 #indexOver{
     display: flex;
+    flex-direction: row;
 }
 #sideIndex{
     height:500px;
@@ -92,7 +93,7 @@ header a:hover, header a:active {
     border-radius: 10px;
     padding:30px;
     box-shadow: 0 0 30px #FFD700;
-    flex:1;
+    
     color: white;
     margin:50px 30px;
 }
@@ -117,6 +118,7 @@ header a:hover, header a:active {
     border-radius: 10px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
 #QANDACARD{
     height:500px;
     width:65%;
@@ -138,7 +140,7 @@ main {
     background-color: black;
     overflow-y: auto;  
 }
-#loginCard input{
+#loginCard input, #signUpCard input{
     width:150px;
     height:50px;
 }
@@ -148,18 +150,20 @@ input{
     border:1px solid #FFD700;
     border: 10px;
 }
-#loginCard{
+
+#signUpCard, #loginCard{
     width: 90%;     
-    max-width: 600px; 
+    max-width: 800px; 
     margin: 100px auto;
     background-color: black;
     border: 3px solid #FFD700;
     color: white;
     border-radius: 10px;
-    padding: 40px;       
+    padding: 75px 25px;       
     box-shadow: 0 0 120px #FFD700;
     box-sizing: border-box;
 }
+   
 #oLogin{
     background-color: black;
     color:white;
@@ -232,13 +236,7 @@ footer a:hover, footer a:active {
 #GS:hover{
     opacity: .5;
 }
-#email{
-    border: 1px solid white;
-    border-radius: 10px;
-    width:150px;
-    height: 30px;
-    margin-bottom: 15px;
-}
+
 
 @media (max-width: 768px) {
     #indexOver {
@@ -258,7 +256,7 @@ footer a:hover, footer a:active {
     #mainIndex{
         height:75%;
     }
-    #loginCard {
+    #loginCard, #signUpCard {
     display: flex;
     flex-direction: column; 
     align-items: center;  
@@ -266,7 +264,7 @@ footer a:hover, footer a:active {
     width:80%;
     margin:20px auto;
     }
-    #oLogin, #loginCard input{
+    #oLogin, #loginCard input, #signUpCard input{
         width:95%;
     }
     #overall{

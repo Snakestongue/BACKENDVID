@@ -30,7 +30,8 @@ let navs = document.getElementsByClassName("navs");
     let GS = document.getElementById("GS")
     let mainIndex = document.getElementById("mainIndex")
     let sideIndex = document.getElementById("sideIndex")
-   
+    let footer = document.getElementsByTagName("footer")[0];
+    let footLink = document.getElementById("footerLink")
     boo= !boo
     if (!boo){
         for(let i=0; i<navs.length; i++){
@@ -43,6 +44,8 @@ let navs = document.getElementsByClassName("navs");
         mainIndex.style.border = "3px solid #00ff2f";
         sideIndex.style.border = "3px solid #00ff2f";
         tongue.style.color = "white";
+        footer.style.color = "#00ff2f"
+        footLink.style.color = "#00ff2f"
 
         
     }else{
@@ -57,6 +60,8 @@ let navs = document.getElementsByClassName("navs");
         mainIndex.style.border = "3px solid #FFD700";
         sideIndex.style.border = "3px solid #FFD700";
         tongue.style.color = "white";
+        footer.style.color = "#FFD700"
+        footLink.style.color = "#FFD700"
     }
 }
 function colorSwitchLogin(){
@@ -65,6 +70,8 @@ function colorSwitchLogin(){
         let hT = document.getElementById("headTitle")
     let tongue = document.getElementById("tongue")
 let navs = document.getElementsByClassName("navs");
+let footer = document.getElementsByTagName("footer")[0];
+    let footLink = document.getElementById("footerLink")
     boo= !boo
     if (!boo){
         for(let i=0; i<navs.length; i++){
@@ -78,6 +85,9 @@ let navs = document.getElementsByClassName("navs");
         logins.style.border = "3px solid #00ff2f"
         logins.style.boxShadow = "0 0 120px #00ff2f"
         oLogin.style.border = "3px solid #00ff2f"
+
+        footer.style.color = "#00ff2f"
+        footLink.style.color = "#00ff2f"
         
     }else{
        for(let i=0; i<navs.length; i++){
@@ -90,16 +100,19 @@ let navs = document.getElementsByClassName("navs");
         logins.style.border = "3px solid #FFD700"
         logins.style.boxShadow = "0 0 120px #FFD700"
         oLogin.style.border = "3px solid #FFD700"
+        footer.style.color = "#FFD700"
+        footLink.style.color = "#FFD700"
     }
 }
 
-
-function colorSwitchNOTES(){
-     let textbox = document.getElementById("textbox");
-    let view = document.getElementById("view");  
+function colorSwitchSignUp(){
+     let logins = document.getElementById("signUpCard");
+    let oLogin = document.getElementById("oLogin");  
         let hT = document.getElementById("headTitle")
     let tongue = document.getElementById("tongue")
 let navs = document.getElementsByClassName("navs");
+let footer = document.getElementsByTagName("footer")[0];
+    let footLink = document.getElementById("footerLink")
     boo= !boo
     if (!boo){
         for(let i=0; i<navs.length; i++){
@@ -110,6 +123,49 @@ let navs = document.getElementsByClassName("navs");
          tongue.style.color = "white";
 
 
+        logins.style.border = "3px solid #00ff2f"
+        logins.style.boxShadow = "0 0 120px #00ff2f"
+        oLogin.style.border = "3px solid #00ff2f"
+
+        footer.style.color = "#00ff2f"
+        footLink.style.color = "#00ff2f"
+        
+    }else{
+       for(let i=0; i<navs.length; i++){
+            navs[i].style.color = "#FFD700";
+             
+        }
+         hT.style.color = "#FFD700"
+        tongue.style.color = "white";
+        
+        logins.style.border = "3px solid #FFD700"
+        logins.style.boxShadow = "0 0 120px #FFD700"
+        oLogin.style.border = "3px solid #FFD700"
+        footer.style.color = "#FFD700"
+        footLink.style.color = "#FFD700"
+    }
+}
+
+
+function colorSwitchNOTES(){
+     let textbox = document.getElementById("textbox");
+    let view = document.getElementById("view");  
+        let hT = document.getElementById("headTitle")
+    let tongue = document.getElementById("tongue")
+let navs = document.getElementsByClassName("navs");
+let footer = document.getElementsByTagName("footer")[0];
+    let footLink = document.getElementById("footerLink")
+    boo= !boo
+    if (!boo){
+        for(let i=0; i<navs.length; i++){
+            navs[i].style.color = "#00ff2f";
+            
+        }
+        hT.style.color = "#00ff2f"
+         tongue.style.color = "white";
+
+        footer.style.color = "#00ff2f"
+        footLink.style.color = "#00ff2f"
         textbox.style.border = "3px solid #00ff2f"
         textbox.style.boxShadow = "0 0 120px #00ff2f"
          view.style.border = "3px solid #00ff2f"
@@ -127,6 +183,8 @@ let navs = document.getElementsByClassName("navs");
         textbox.style.boxShadow = "0 0 120px #FFD700"
          view.style.border = "3px solid #FFD700"
         view.style.boxShadow = "0 0 120px #FFD700"
+        footer.style.color = "#FFD700"
+        footLink.style.color = "#FFD700"
     }
 }
 
@@ -136,6 +194,8 @@ function colorSwitchQA(){
         let hT = document.getElementById("headTitle")
     let tongue = document.getElementById("tongue")
 let navs = document.getElementsByClassName("navs");
+let footer = document.getElementsByTagName("footer")[0];
+    let footLink = document.getElementById("footerLink")
     boo= !boo
     if (!boo){
         for(let i=0; i<navs.length; i++){
@@ -145,6 +205,8 @@ let navs = document.getElementsByClassName("navs");
         hT.style.color = "#00ff2f"
          tongue.style.color = "white";
 
+         footer.style.color = "#00ff2f"
+        footLink.style.color = "#00ff2f"
 
         card.style.border = "3px solid #00ff2f"
         card.style.boxShadow = "0 0 120px #00ff2f"
@@ -160,6 +222,8 @@ let navs = document.getElementsByClassName("navs");
         
         card.style.border = "3px solid #FFD700"
         card.style.boxShadow = "0 0 120px #FFD700"
+        footer.style.color = "#FFD700"
+        footLink.style.color = "#FFD700"
         
     }
 }
