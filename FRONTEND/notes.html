@@ -3,6 +3,8 @@
         <link rel="stylesheet" href="style.css">
                         <title>Note Saver || Notes</title>
         <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
     </head>
     <body>
@@ -29,7 +31,7 @@
 
                 </div>
                 <div id="keyboard"></div>
-
+            </main>
 
                 
             <footer>
@@ -55,18 +57,30 @@
             let saveButton = document.createElement("button");
             let bottomDiv = document.getElementById("buttons")
             let view = document.getElementById("view");
+
             saveButton.innerHTML = "Save";
             saveButton.style.backgroundColor = "black";
             saveButton.style.color = "white";
             saveButton.style.width = "90px";
+            saveButton.style.height = "30px";
+            saveButton.style.border = "1px solid white"
+            saveButton.style.borderRadius = "10px"
+            saveButton.style.marginBottom = "15px"
+
             bottomDiv.appendChild(saveButton);
 
 
             let getButton = document.createElement("button");
             getButton.innerHTML = "Get";
+
             getButton.style.backgroundColor = "black";
             getButton.style.color = "white";
             getButton.style.width = "90px";
+            getButton.style.height = "30px";
+            getButton.style.border = "1px solid white"
+            getButton.style.borderRadius = "10px"
+            getButton.style.marginBottom = "15px"
+
             bottomDiv.appendChild(getButton);
 
 

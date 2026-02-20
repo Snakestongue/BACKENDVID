@@ -128,15 +128,15 @@ header a:hover, header a:active {
     color: white;
     margin: auto;
     margin-top:50px;
+    overflow-y: auto;
 }
 button:hover{
     cursor: pointer;
 }
-
-
-main{
-    grid-area:content;
+main {
+    grid-area: content;
     background-color: black;
+    overflow-y: auto;  
 }
 #loginCard input{
     width:150px;
@@ -149,15 +149,16 @@ input{
     border: 10px;
 }
 #loginCard{
-    width:600px;
-    margin:auto;
+    width: 90%;     
+    max-width: 600px; 
+    margin: 100px auto;
     background-color: black;
     border: 3px solid #FFD700;
-    color:white;
+    color: white;
     border-radius: 10px;
-    margin-top:100px;
-    padding:80px;
-    box-shadow:0 0 120px #FFD700;
+    padding: 40px;       
+    box-shadow: 0 0 120px #FFD700;
+    box-sizing: border-box;
 }
 #oLogin{
     background-color: black;
@@ -168,23 +169,28 @@ input{
     border-radius: 10px;
     margin-left:20px
 }
-#overall{
+#overall {
+    /* flex-direction: column; Stack textbox and view on top of each other */
     display: flex;
+    align-items: center;
+    flex-direction: row;
 }
 #textbox, #view{
-    width: 45%;
-    height:550px;
-    width:600px;
-    border:3px solid #FFD700;
-    margin:auto;
-    margin-top:50px;
-    box-shadow:0 0 120px #FFD700;
+   flex: 1;
+    max-width: 600px;
+    height: 400px; 
+    margin: 20px auto;
+    border: 3px solid #FFD700;
+    box-shadow: 0 0 120px #FFD700;
     border-radius: 10px;
-    color:white;
+    color: white;
+    padding: 15px;
+    overflow-y: auto;
+    box-sizing: border-box; 
 }
-/* #textbox:hover, #view:hover{
-    border:3px solid black;
-} */
+
+
+
 #keyboard{
     text-align: center;
 }
@@ -226,6 +232,13 @@ footer a:hover, footer a:active {
 #GS:hover{
     opacity: .5;
 }
+#email{
+    border: 1px solid white;
+    border-radius: 10px;
+    width:150px;
+    height: 30px;
+    margin-bottom: 15px;
+}
 
 @media (max-width: 768px) {
     #indexOver {
@@ -250,10 +263,21 @@ footer a:hover, footer a:active {
     flex-direction: column; 
     align-items: center;  
     justify-content: center; 
-    max-width:60%;
+    width:80%;
     margin:20px auto;
     }
     #oLogin, #loginCard input{
-        width:75%;
+        width:95%;
+    }
+    #overall{
+        display: flex;
+        flex-direction: column; 
+    }
+    #textbox, #view {
+        width: 85%; /* Wider for thumb-typing */
+        margin: 10px 0; 
+        
+        height: 25vh; 
+        min-height: 200px; /* Ensures it never gets TOO small */
     }
 }
